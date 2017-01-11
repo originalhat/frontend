@@ -6,18 +6,18 @@ import Icon from './Icon';
 
 const BUTTON_SIZE = 30;
 
-const CloseButton = styled.button`
+const CloseButton = styled.button.attrs({
+  className: 'absolute circle shadow-subtle bg-white bold flex items-center cursor-pointer border border-white p0'
+})`
   top: ${-BUTTON_SIZE / 2}px;
   right: ${-BUTTON_SIZE / 2}px;
   width: ${BUTTON_SIZE}px;
   height: ${BUTTON_SIZE}px;
 `;
 
-CloseButton.defaultProps = {
-  className: 'absolute circle shadow-subtle bg-white bold flex items-center cursor-pointer border border-white p0'
-};
-
-const DialogBackdrop = styled.div`
+const DialogBackdrop = styled.div.attrs({
+  className: 'absolute bg-white'
+})`
   top: 0;
   left: 0;
   bottom: 0;
@@ -26,32 +26,24 @@ const DialogBackdrop = styled.div`
   z-index: 1001;
 `;
 
-DialogBackdrop.defaultProps = {
-  className: 'absolute bg-white'
-};
-
-const DialogBox = styled.div`
+const DialogBox = styled.div.attrs({
+  className: 'background bg-white transition-popup rounded-3 shadow-subtle center relative mx4'
+})`
   padding: 50px 10px;
   width: 500px;
   zIndex: 1002;
   maxWidth: 90vw;
 `;
 
-DialogBox.defaultProps = {
-  className: 'background bg-white transition-popup rounded-3 shadow-subtle center relative mx4'
-};
-
-const DialogContainer = styled.span`
+const DialogContainer = styled.span.attrs({
+  className: 'block fixed flex items-center justify-center'
+})`
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   z-index: 1000;
 `;
-
-DialogContainer.defaultProps = {
-  className: 'block fixed flex items-center justify-center'
-};
 
 class Dialog extends React.Component {
   static propTypes = {
