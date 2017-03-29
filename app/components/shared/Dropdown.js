@@ -10,6 +10,7 @@ export default class Dropdown extends React.Component {
     children: React.PropTypes.node.isRequired,
     width: React.PropTypes.number.isRequired,
     className: React.PropTypes.string,
+    style: React.PropTypes.object,
     onToggle: React.PropTypes.func,
     nibOffsetX: React.PropTypes.number.isRequired,
     offsetY: React.PropTypes.number.isRequired
@@ -140,6 +141,7 @@ export default class Dropdown extends React.Component {
     return (
       <span
         ref={(wrapperNode) => this.wrapperNode = wrapperNode}
+        style={this.props.style}
         className={wrapperClassName}
       >
         {firstChild}
