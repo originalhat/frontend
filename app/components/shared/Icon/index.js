@@ -13,6 +13,8 @@ const titleNode = (title) => {
 
 const pathNodes = (icon) => {
   switch (icon) {
+    case 'sso':
+      return require("./sso").default;
     case 'settings':
       return require("./settings").default;
     case 'users':
